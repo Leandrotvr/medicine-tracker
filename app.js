@@ -4,11 +4,11 @@ const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./db');
-const expressLayouts = require('express-ejs-layouts');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Configuración de EJS y rutas de vistas
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -19,14 +19,13 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-app.use(expressLayouts);
-app.set('layout', 'layout'); // no se usa, pero no molesta
-
+// Middleware para pasar información del usuario a las vistas
 app.use((req, res, next) => {
   res.locals.user = req.session.user;
   next();
 });
 
+// Rutas
 app.get('/', (req, res) => {
   if (!req.session.user) return res.redirect('/login');
   const userId = req.session.user.id;
@@ -124,6 +123,7 @@ app.post('/delete/:id', (req, res) => {
   });
 });
 
+// Arrancar el servidor
 app.listen(PORT, () => {
   console.log('Servidor iniciado en http://localhost:' + PORT);
 });
