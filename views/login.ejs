@@ -2,31 +2,31 @@
 <html lang='es'>
 <head>
   <meta charset='UTF-8'>
-  <title>Iniciar sesión</title>
+  <title>Iniciar sesi&oacute;n</title>
   <link rel='stylesheet' href='/style.css'>
 </head>
 <body>
   <nav class='navbar'>
-    <a href='/login'>Iniciar sesión</a>
+    <a href='/login'>Iniciar sesi&oacute;n</a>
     <a href='/register'>Registrarse</a>
     <button id='themeToggle'>Cambiar tema</button>
   </nav>
   <div class='container' style='max-width:400px'>
-    <h1>Iniciar sesión</h1>
+    <h1>Iniciar sesi&oacute;n</h1>
     <% if (error) { %><p style='color:#e57373;'><%= error %></p><% } %>
     <form method='post' action='/login'>
       <label>Usuario:
         <input type='text' name='username' required>
       </label>
-      <label>Contraseña:
+      <label>Contrase&ntilde;a:
         <input type='password' name='password' required>
       </label>
       <button type='submit' class='btn'>Entrar</button>
     </form>
-    <p>¿No tienes cuenta? <a href='/register'>Regístrate</a></p>
+    <p>&iquest;No tienes cuenta? <a href='/register'>Reg&iacute;strate</a></p>
   </div>
   <footer>
-    Aplicación creada por Leandro Maciel. Desarrollada con Node.js, Express y SQLite.<br>
+    Aplicaci&oacute;n creada por Leandro Maciel. Desarrollada con Node.js, Express y SQLite.<br>
     Contacto: WhatsApp <a href='https://wa.me/543777416857'>+54&nbsp;3777&nbsp;416857</a> | Email <a href='mailto:leandrotvr@gmail.com'>leandrotvr@gmail.com</a>
   </footer>
   <script>

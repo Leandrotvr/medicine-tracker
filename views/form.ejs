@@ -2,7 +2,7 @@
 <html lang='es'>
 <head>
   <meta charset='UTF-8'>
-  <title><%= medicine ? 'Editar medicamento' : 'Añadir medicamento' %></title>
+  <title><%= medicine ? 'Editar medicamento' : 'A&ntilde;adir medicamento' %></title>
   <link rel='stylesheet' href='/style.css'>
 </head>
 <body>
@@ -10,16 +10,16 @@
     <% if (user) { %>
       <span>Bienvenido, <%= user.username %></span>
       <a href='/'>Inicio</a>
-      <a href='/add'>Añadir medicamento</a>
-      <a href='/logout'>Cerrar sesión</a>
+      <a href='/add'>A&ntilde;adir medicamento</a>
+      <a href='/logout'>Cerrar sesi&oacute;n</a>
     <% } else { %>
-      <a href='/login'>Iniciar sesión</a>
+      <a href='/login'>Iniciar sesi&oacute;n</a>
       <a href='/register'>Registrarse</a>
     <% } %>
     <button id='themeToggle'>Cambiar tema</button>
   </nav>
   <div class='container' style='max-width:600px'>
-    <h1><%= medicine ? 'Editar medicamento' : 'Añadir medicamento' %></h1>
+    <h1><%= medicine ? 'Editar medicamento' : 'A&ntilde;adir medicamento' %></h1>
     <form method='post' action='<%= action %>'>
       <label>Nombre:
         <input type='text' name='name' required value='<%= medicine ? medicine.name : '' %>'>
@@ -34,7 +34,7 @@
     </form>
   </div>
   <footer>
-    Aplicación creada por Leandro Maciel. Desarrollada con Node.js, Express y SQLite.<br>
+    Aplicaci&oacute;n creada por Leandro Maciel. Desarrollada con Node.js, Express y SQLite.<br>
     Contacto: WhatsApp <a href='https://wa.me/543777416857'>+54&nbsp;3777&nbsp;416857</a> | Email <a href='mailto:leandrotvr@gmail.com'>leandrotvr@gmail.com</a>
   </footer>
   <script>

@@ -10,10 +10,10 @@
     <% if (user) { %>
       <span>Bienvenido, <%= user.username %></span>
       <a href='/'>Inicio</a>
-      <a href='/add'>Añadir medicamento</a>
-      <a href='/logout'>Cerrar sesión</a>
+      <a href='/add'>A&ntilde;adir medicamento</a>
+      <a href='/logout'>Cerrar sesi&oacute;n</a>
     <% } else { %>
-      <a href='/login'>Iniciar sesión</a>
+      <a href='/login'>Iniciar sesi&oacute;n</a>
       <a href='/register'>Registrarse</a>
     <% } %>
     <button id='themeToggle'>Cambiar tema</button>
@@ -51,17 +51,14 @@
     <% } %>
   </div>
   <footer>
-    Aplicación creada por Leandro Maciel. Desarrollada con Node.js, Express y SQLite.<br>
+    Aplicaci&oacute;n creada por Leandro Maciel. Desarrollada con Node.js, Express y SQLite.<br>
     Contacto: WhatsApp <a href='https://wa.me/543777416857'>+54&nbsp;3777&nbsp;416857</a> | Email <a href='mailto:leandrotvr@gmail.com'>leandrotvr@gmail.com</a>
   </footer>
   <script>
-    // Al cargar la página, aplicar tema si está guardado
     const current = localStorage.getItem('theme');
     if (current === 'dark') document.body.classList.add('dark');
-    // Manejador para cambiar de tema
     document.getElementById('themeToggle').addEventListener('click', function() {
       document.body.classList.toggle('dark');
-      // Guardar preferencia en localStorage
       if (document.body.classList.contains('dark')) {
         localStorage.setItem('theme', 'dark');
       } else {
