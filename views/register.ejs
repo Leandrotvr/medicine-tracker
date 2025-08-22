@@ -4,35 +4,41 @@
   <meta charset='UTF-8'>
   <title>Registrarse</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#f5f5f5; margin:0; }
-    .navbar { background:#333; color:#fff; padding:1rem; }
-    .navbar a { color:#fff; margin-right:1rem; text-decoration:none; }
-    .container { max-width:600px; margin:2rem auto; background:#fff; padding:2rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
-    h1 { margin-top:0; }
-    label { display:block; margin-top:0.5rem; }
-    input[type='text'], input[type='password'] { width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ccc; border-radius:4px; }
-    button { padding:0.5rem 1rem; background:#4CAF50; color:#fff; border:none; border-radius:4px; cursor:pointer; margin-top:0.5rem; }
-    button:hover { background:#45a049; }
+    body { background:#121212; color:#dddddd; font-family: Arial, sans-serif; margin:0; }
+    .navbar { background:#1f1f1f; padding:1rem; }
+    .navbar a { color:#4CAF50; margin-right:1rem; text-decoration:none; font-weight:bold; }
+    .container { max-width:400px; margin:2rem auto; background:#1e1e1e; padding:2rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.5); }
+    h1 { margin-top:0; color:#ffffff; }
+    label { display:block; margin-top:1rem; }
+    input[type='text'], input[type='password'] { width:100%; padding:0.5rem; margin-top:0.5rem; border:1px solid #444444; border-radius:4px; background:#2b2b2b; color:#dddddd; }
+    button { margin-top:1rem; padding:0.5rem 1rem; background:#4CAF50; color:#ffffff; border:none; border-radius:4px; cursor:pointer; }
+    button:hover { background:#43a047; }
+    footer { margin-top:2rem; text-align:center; font-size:0.9rem; color:#666666; }
+    footer a { color:#4CAF50; text-decoration:none; }
   </style>
 </head>
 <body>
   <nav class='navbar'>
-    <a href='/login'>Iniciar sesi&oacute;n</a>
+    <a href='/login'>Iniciar sesión</a>
     <a href='/register'>Registrarse</a>
   </nav>
   <div class='container'>
     <h1>Registrarse</h1>
-    <% if (error) { %><p style='color:red;'><%= error %></p><% } %>
+    <% if (error) { %><p style='color:#e57373;'><%= error %></p><% } %>
     <form method='post' action='/register'>
       <label>Usuario:
         <input type='text' name='username' required>
       </label>
-      <label>Contrase&ntilde;a:
+      <label>Contraseña:
         <input type='password' name='password' required>
       </label>
       <button type='submit'>Registrar</button>
     </form>
-    <p>&iquest;Ya tienes cuenta? <a href='/login'>Iniciar sesi&oacute;n</a></p>
+    <p>¿Ya tienes cuenta? <a href='/login'>Iniciar sesión</a></p>
   </div>
+  <footer>
+    Aplicación creada por Leandro Maciel. Desarrollada con Node.js, Express y SQLite.<br>
+    Contacto: WhatsApp <a href='https://wa.me/543777416857'>+54 3777 416857</a> | Email <a href='mailto:leandrotvr@gmail.com'>leandrotvr@gmail.com</a>
+  </footer>
 </body>
 </html>
