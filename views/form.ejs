@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='UTF-8'>
+  <title><%= medicine ? 'Editar medicamento' : 'A&ntilde;adir medicamento' %></title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f5f5; margin:0; }
+    .navbar { background:#333; color:#fff; padding:1rem; }
+    .navbar a { color:#fff; margin-right:1rem; text-decoration:none; }
+    .container { max-width:600px; margin:2rem auto; background:#fff; padding:2rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    h1 { margin-top:0; }
+    label { display:block; margin-top:0.5rem; }
+    input[type='text'] { width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ccc; border-radius:4px; }
+    button { padding:0.5rem 1rem; background:#4CAF50; color:#fff; border:none; border-radius:4px; cursor:pointer; margin-top:0.5rem; }
+    button:hover { background:#45a049; }
+  </style>
+</head>
+<body>
+  <nav class='navbar'>
+    <% if (user) { %>
+      Bienvenido, <%= user.username %> |
+      <a href='/'>Inicio</a>
+      <a href='/add'>A&ntilde;adir medicamento</a>
+      <a href='/logout'>Cerrar sesi&oacute;n</a>
+    <% } else { %>
+      <a href='/login'>Iniciar sesi&oacute;n</a>
+      <a href='/register'>Registrarse</a>
+    <% } %>
+  </nav>
+  <div class='container'>
+    <h1><%= medicine ? 'Editar medicamento' : 'A&ntilde;adir medicamento' %></h1>
+    <form method='post' action='<%= action %>'>
+      <label>Nombre:
+        <input type='text' name='name' required value='<%= medicine ? medicine.name : '' %>'>
+      </label>
+      <label>Dosis:
+        <input type='text' name='dose' required value='<%= medicine ? medicine.dose : '' %>'>
+      </label>
+      <label>Frecuencia:
+        <input type='text' name='frequency' required value='<%= medicine ? medicine.frequency : '' %>'>
+      </label>
+      <button type='submit'><%= medicine ? 'Actualizar' : 'Crear' %></button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Registrarse</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f5f5; margin:0; }
+    .navbar { background:#333; color:#fff; padding:1rem; }
+    .navbar a { color:#fff; margin-right:1rem; text-decoration:none; }
+    .container { max-width:600px; margin:2rem auto; background:#fff; padding:2rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    h1 { margin-top:0; }
+    label { display:block; margin-top:0.5rem; }
+    input[type='text'], input[type='password'] { width:100%; padding:0.5rem; margin-top:0.25rem; border:1px solid #ccc; border-radius:4px; }
+    button { padding:0.5rem 1rem; background:#4CAF50; color:#fff; border:none; border-radius:4px; cursor:pointer; margin-top:0.5rem; }
+    button:hover { background:#45a049; }
+  </style>
+</head>
+<body>
+  <nav class='navbar'>
+    <a href='/login'>Iniciar sesi&oacute;n</a>
+    <a href='/register'>Registrarse</a>
+  </nav>
+  <div class='container'>
+    <h1>Registrarse</h1>
+    <% if (error) { %><p style='color:red;'><%= error %></p><% } %>
+    <form method='post' action='/register'>
+      <label>Usuario:
+        <input type='text' name='username' required>
+      </label>
+      <label>Contrase&ntilde;a:
+        <input type='password' name='password' required>
+      </label>
+      <button type='submit'>Registrar</button>
+    </form>
+    <p>&iquest;Ya tienes cuenta? <a href='/login'>Iniciar sesi&oacute;n</a></p>
+  </div>
+</body>
+</html>

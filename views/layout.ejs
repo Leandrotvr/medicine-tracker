@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang=\"es\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <title><%= typeof title !== 'undefined' ? title : 'Seguimiento de Medicamentos' %></title>
+  <style>
+    body { font-family: Arial; margin: 0; padding: 20px; background: #f2f2f2; }
+    header { background: #4caf50; color: #fff; padding: 10px; margin-bottom: 20px; }
+    nav a { color: #fff; margin-right: 10px; text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    .btn { padding: 6px 12px; color: #fff; background: #4caf50; border: none; cursor: pointer; }
+    .btn-danger { background: #f44336; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <% if (user) { %>
+        Bienvenido, <%= user.username %> |
+        <a href=\"/\">Inicio</a>
+        <a href=\"/add\">A&ntilde;adir medicamento</a>
+        <a href=\"/logout\">Cerrar sesión</a>
+      <% } else { %>
+        <a href=\"/login\">Iniciar sesión</a>
+        <a href=\"/register\">Registrarse</a>
+      <% } %>
+    </nav>
+  </header>
+  <%- body %>
+</body>
+</html>
